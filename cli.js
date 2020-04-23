@@ -22,6 +22,8 @@ const cli = meow(`
                                    --source-map
                                    --minified-url
                                    --minified-file
+      -v, --minified-prefix URL  The URL that will prefixed to bundles, only
+                                 applies for directory-mode
       -e, --endpoint URL         The URL of the upload server
       -m, --minified-url URL     The URL your users will request your bundle
       -s, --source-map PATH      The path of the source map file (local)
@@ -50,6 +52,12 @@ const cli = meow(`
       OR
       $ bugsnag-sourcemaps upload \\
           --directory \\
+          --api-key f915102cdb8153ee934b8549c930aa1b \\
+          --app-version 1.0.0
+      OR
+      $ bugsnag-sourcemaps upload \\
+          --directory \\
+          --minified-prefix http://localhost/ \\
           --api-key f915102cdb8153ee934b8549c930aa1b \\
           --app-version 1.0.0
 `, {
